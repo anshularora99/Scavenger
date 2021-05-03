@@ -1,0 +1,83 @@
+<style xmlns:font-size="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml"
+       xmlns:font-size="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml"
+       xmlns:font-size="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml">
+   :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f9c300;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 40px;
+border: #f9c300;
+}
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+* {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+
+            display: grid;
+            height: 100%;
+        }
+
+        .center-fit {
+          border-radius: 7px;
+          margin: auto;
+          width: 100%;
+          height: 266px;
+        }
+</style>
+<body style="background-color:#082240;background-size:100% 100% " >
+<div class="text-center" >
+
+  <img *ngIf="path==1 else pathBlock" class="center-fit" src='assets/AMI-Map-with-Numbers_9.jpg'style="padding: 10px">
+<ng-template #pathBlock> <img *ngIf="path==2 else pathBlock1" class="center-fit" src='assets/path19.jpg'style="padding: 10px"></ng-template>
+<ng-template #pathBlock1> <img *ngIf="path==3 else pathBlock2" class="center-fit" src='assets/path29.jpg'style="padding: 10px"></ng-template>
+<ng-template #pathBlock2> <img *ngIf="path==4 else pathBlock3" class="center-fit" src='assets/path39.jpg'style="padding: 10px"></ng-template>
+<ng-template #pathBlock3> <img *ngIf="path==5 " class="center-fit" src='assets/path49.jpg'style="padding: 10px"></ng-template>
+
+
+  <h3 style="background-color: #f9c300;border-radius: 7px;text-align: center;font-style: normal;font-size: 20px;padding: 20px;margin-left:10px;margin-right: 10px">CONGRATULATIONS!!
+    <p style="color : black;font-size: 18px;">You have successfully completed<br> The island hunt.</p></h3>
+
+      <br>
+
+    <p style="text-align: center;font-size: 18px; font-family: 'Roboto';padding-top: 10px" >
+     You have entered this week's draw to
+      <br>win prizes including spa vouchers,<br>
+      dining experiences and more on<br>
+      Al Maryah island.
+    </p>
+<p style="text-align: center; font-size: 18px; font-family: 'Roboto';padding: 20px">
+      We will communicate the result<br> through email and instagram.<br> Stay connected.
+    </p>
+
+
+<a routerLink="/"><button class="button" style="vertical-align:middle;margin-top: 10px"><span>Exit </span></button></a>
+
+</div>
+</body>
+
+

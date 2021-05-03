@@ -1,0 +1,21 @@
+.welcome-screen {
+background: #082240;
+
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: left 0.5s;
+}
+lgo {
+  max-width: 100%;
+  background: url("./../../assets/Assetwhitesplash.PNG") no-repeat center;
+  background-size: contain;
+  width:110vw;
+  height: 250px;
+  margin: 0;
+padding: 0;
+
+}

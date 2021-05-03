@@ -1,0 +1,193 @@
+
+<style>
+   :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+  h1,
+  h2{
+    color: #f9c300;
+  },
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f9c300;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 40px;
+border: #f9c300;
+}
+input[type=text], input[type=password] {
+
+  border-radius: 6px;
+  width: 80%;
+  padding: 12px 25px;
+  margin-bottom: 30px ;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input.largerCheckbox {
+            width: 15px;
+            height: 15px;
+        }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+
+    background-color: #082240;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+<body style="background-color:#082240;background-size:100% 100% " >
+<div class=" d-flex align-items-center min-vh-100" >
+
+
+<div class="container" align="center">
+<div class="row">
+
+      <div class="card-body">
+
+          <h2 style="margin: 50px 0;text-align: center">SIGN UP</h2>
+
+
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" >
+
+            <div class="form-group ">
+              <input type="text" placeholder="Name"  class="form-control"
+              [formControl]="myForm.controls['Name']">
+            </div>
+            <div class="form-group ">
+              <input type="text" placeholder="Instagram Username" class="form-control"
+              [formControl]="myForm.controls['InstaUsername']">
+            </div>
+
+            <div class="form-group ">
+              <input type="text" class="form-control" placeholder="Email"
+              [formControl]="myForm.controls['Email']">
+            </div>
+            <div class="alert alert-warning" *ngIf="(!myForm.controls['Email'].valid) && (myForm.controls['Email'].touched)">
+              A valid email is required
+            </div>
+            <div class="form-group ">
+              <input type="password" placeholder="PIN (must be 6 digits) " class="form-control" [formControl]="myForm.controls['PIN']">
+            </div>
+            <div class="form-group">
+              <input type="checkbox" class="largerCheckbox" id="chk" name="scales" >
+              <label style="color:#ffffff;font-size: 12px" for="chk">I agree to the <a routerLink="/terms">terms and conditions</a> pertaining to the use of the<br>
+above information by JIIT and associated entities.</label></div>
+
+              <button class="button" ><span>Register </span>
+              </button>
+             <a routerLink="/login"><p style="color: #FFFFFF">Already Registered?<b style="color: #f9c300">Login </b></p> </a>
+
+          </form>
+
+      </div>
+<div class="alert alert-success" *ngIf="message.length > 0">
+  {{message}}
+</div>
+      <div class="alert alert-danger" *ngIf="usererror">
+        {{usererror.message}}
+      </div>
+
+
+</div>
+
+
+
+</div>
+</div>
+</body>
